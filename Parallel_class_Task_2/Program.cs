@@ -87,12 +87,7 @@ namespace Parallel_class_Task_2
                 using (StreamReader sr = new StreamReader(docPath))
                 {
                     string c = sr.ReadToEnd();
-                    string[] words = c.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    
-                    foreach (var item in words)
-                        intList.Add(Int32.Parse(item));
-
-                    //intList = c.Split(' ').Select(Int32.Parse).ToList();
+                    intList = c.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(Int32.Parse).ToList();
                 }
             }
             catch (Exception e)
